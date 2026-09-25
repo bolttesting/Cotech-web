@@ -1,0 +1,4017 @@
+/* COTech overrides — template CSS is precompiled; arbitrary Tailwind classes won't apply. */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Hero rotating cards — arc stays inside the viewport on all breakpoints */
+.cotech-rotating-cards {
+  height: clamp(18rem, 54vh, 28rem);
+  margin-top: 0.75rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+@media (min-width: 768px) {
+  .cotech-rotating-cards {
+    height: clamp(24rem, 60vh, 36rem);
+    margin-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .cotech-rotating-cards {
+    height: clamp(30rem, 74vh, 44rem);
+    margin-top: -2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-rotating-cards {
+    height: min(90vh, 50rem);
+    margin-top: -5rem;
+  }
+}
+/* Wheel center sits just under the stage so only the top fan is visible */
+.cotech-rotating-cards [data-rotating-wheel] {
+  top: 108%;
+  width: min(200vw, 42rem) !important;
+  height: min(200vw, 42rem) !important;
+  max-width: min(200vw, 42rem) !important;
+  max-height: min(200vw, 42rem) !important;
+}
+@media (min-width: 768px) {
+  .cotech-rotating-cards [data-rotating-wheel] {
+    top: 106%;
+    width: min(160vw, 56rem) !important;
+    height: min(160vw, 56rem) !important;
+    max-width: min(160vw, 56rem) !important;
+    max-height: min(160vw, 56rem) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .cotech-rotating-cards [data-rotating-wheel] {
+    top: 108%;
+    width: min(130vw, 64rem) !important;
+    height: min(130vw, 64rem) !important;
+    max-width: min(130vw, 64rem) !important;
+    max-height: min(130vw, 64rem) !important;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-rotating-cards [data-rotating-wheel] {
+    top: 110%;
+    width: min(115vw, 78rem) !important;
+    height: min(115vw, 78rem) !important;
+    max-width: min(115vw, 78rem) !important;
+    max-height: min(115vw, 78rem) !important;
+  }
+}
+.cotech-rotating-cards [data-rotating-card] {
+  width: min(62vw, 14.5rem) !important;
+  padding: 0.7rem !important;
+  gap: 0.7rem !important;
+  box-sizing: border-box;
+}
+.cotech-rotating-cards [data-rotating-card] h3 {
+  font-size: clamp(0.88rem, 3.2vw, 1.15rem);
+  max-width: 8.5rem;
+  line-height: 1.2;
+}
+.cotech-rotating-cards [data-rotating-card] .ns-shape-1,
+.cotech-rotating-cards [data-rotating-card] [class*="ns-shape-"] {
+  width: 1.75rem !important;
+  height: 1.75rem !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+}
+.cotech-rotating-cards [data-rotating-card] figure {
+  height: min(32vw, 9.5rem) !important;
+}
+@media (min-width: 768px) {
+  .cotech-rotating-cards [data-rotating-card] {
+    width: min(36vw, 16rem) !important;
+    padding: 0.85rem !important;
+  }
+  .cotech-rotating-cards [data-rotating-card] figure {
+    height: min(28vw, 13.5rem) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .cotech-rotating-cards [data-rotating-card] {
+    width: min(28vw, 20rem) !important;
+    padding: 1rem !important;
+  }
+  .cotech-rotating-cards [data-rotating-card] figure {
+    height: min(24vw, 17.5rem) !important;
+  }
+  .cotech-rotating-cards [data-rotating-card] h3 {
+    max-width: 10.5rem;
+    font-size: inherit;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-rotating-cards [data-rotating-card] {
+    width: 22.125rem !important; /* w-88.5 */
+  }
+  .cotech-rotating-cards [data-rotating-card] figure {
+    height: 20.3125rem !important; /* h-81.25 */
+  }
+  .cotech-rotating-cards [data-rotating-card] h3 {
+    max-width: 11.25rem;
+  }
+}
+
+/* Soft edge fades — always present so side peeks look intentional */
+.cotech-rotating-fade {
+  width: 3.5rem;
+}
+@media (min-width: 640px) {
+  .cotech-rotating-fade {
+    width: 5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .cotech-rotating-fade {
+    width: 7rem;
+  }
+}
+
+/* Hero CTA — never overflow the viewport */
+.main-container a.inline-flex.w-\[80\%\],
+.main-container a[class*="w-[80%]"] {
+  max-width: 100%;
+}
+section.pt-30 .main-container > div {
+  max-width: 100%;
+}
+section.pt-30 h1,
+section.pt-30 p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+section.pt-30 a.inline-flex {
+  display: inline-flex;
+  width: 100%;
+  max-width: 20rem;
+  box-sizing: border-box;
+}
+section.pt-30 a.inline-flex button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+@media (min-width: 1024px) {
+  section.pt-30 a.inline-flex {
+    width: auto;
+    max-width: none;
+  }
+}
+@media (max-width: 1023px) {
+  section.pt-30 .main-container > div.overflow-hidden {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+@media (max-width: 767px) {
+  [data-button-wrapper] {
+    max-width: 100%;
+  }
+  section.pt-30 .main-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Hero two-column layout */
+.cotech-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: end;
+}
+@media (min-width: 1280px) {
+  .cotech-hero-grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 1.5rem;
+  }
+}
+.cotech-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+@media (min-width: 1280px) {
+  .cotech-hero-copy {
+    padding-bottom: 4rem;
+    text-align: left;
+  }
+  .cotech-hero-copy .cotech-hero-align {
+    justify-content: flex-start;
+  }
+}
+.cotech-hero-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header / footer wordmark */
+.cotech-logo-header {
+  display: block;
+  height: 42px;
+  width: auto;
+  max-width: 196px;
+}
+.cotech-logo-footer {
+  display: block;
+  height: auto;
+  width: 148px;
+  max-width: 100%;
+  margin-inline: auto;
+}
+.cotech-footer-logo-wrap {
+  width: 148px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.cotech-footer {
+  padding-top: 0;
+}
+.cotech-footer > .main-container {
+  max-width: 1440px;
+  width: 100%;
+}
+.cotech-footer-top {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  align-items: start;
+}
+.cotech-footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  max-width: 340px;
+  width: 100%;
+  margin-inline: auto;
+}
+.cotech-footer-brand > .cotech-footer-logo-wrap {
+  margin-bottom: 0;
+}
+.cotech-footer-brand > p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  max-width: 32ch;
+  text-align: center;
+}
+.cotech-footer-brand .cotech-scope-cta {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.35rem;
+  padding: 1rem 1rem 1.1rem;
+  gap: 0.55rem;
+  align-items: center;
+}
+.cotech-footer-brand .cotech-scope-cta > a {
+  align-self: center;
+  margin-inline: auto;
+  justify-content: center;
+}
+.cotech-footer-brand .cotech-scope-cta-title,
+.cotech-footer-brand .cotech-scope-cta-text {
+  max-width: none;
+  text-align: center;
+  margin-inline: auto;
+}
+.cotech-footer-menus {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-left: 0;
+  width: 100%;
+}
+.cotech-footer-col {
+  border-top: 1px solid rgba(11, 46, 51, 0.1);
+}
+.cotech-footer-col:last-child {
+  border-bottom: 1px solid rgba(11, 46, 51, 0.1);
+}
+.cotech-footer-col-title {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem 0;
+  font: inherit;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: var(--color-secondary, #0b2e33);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.cotech-footer-col-title:focus-visible {
+  outline: 2px solid var(--color-primary-500, #0d666c);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.cotech-footer-col-chevron {
+  position: relative;
+  display: block;
+  width: 0.65rem;
+  height: 0.65rem;
+  flex-shrink: 0;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  opacity: 0.55;
+}
+.cotech-footer-col.is-open .cotech-footer-col-chevron {
+  transform: rotate(-135deg);
+  opacity: 0.8;
+}
+.cotech-footer-col-panel {
+  display: none;
+  padding: 0 0 1rem;
+}
+.cotech-footer-col.is-open .cotech-footer-col-panel {
+  display: block;
+}
+.cotech-footer-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.cotech-footer-contact {
+  margin-top: 1rem !important;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(11, 46, 51, 0.08);
+}
+@media (min-width: 768px) {
+  .cotech-footer-menus {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem 1.5rem;
+  }
+  .cotech-footer-col {
+    border: 0;
+  }
+  .cotech-footer-col:last-child {
+    border: 0;
+  }
+  .cotech-footer-col-title {
+    pointer-events: none;
+    cursor: default;
+    padding: 0 0 0.75rem;
+  }
+  .cotech-footer-col-chevron {
+    display: none;
+  }
+  .cotech-footer-col-panel,
+  .cotech-footer-col.is-open .cotech-footer-col-panel,
+  .cotech-footer-col:not(.is-open) .cotech-footer-col-panel {
+    display: block;
+    padding: 0;
+  }
+}
+.cotech-footer-bottom {
+  padding-top: 1.15rem;
+  padding-bottom: 1.5rem;
+}
+.cotech-footer-legal-bar {
+  width: 100%;
+}
+.cotech-footer-legal-links {
+  flex-shrink: 0;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .cotech-footer-top {
+    padding-top: 3.5rem;
+    padding-bottom: 2.25rem;
+  }
+  .cotech-footer-menus {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem 1.5rem;
+  }
+  .cotech-footer-legal-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cotech-footer-legal-links {
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-footer > .main-container {
+    max-width: 1480px;
+    padding-inline: 1.5rem;
+  }
+  .cotech-footer-top {
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+    gap: 2rem 3rem;
+  }
+  .cotech-footer-brand {
+    align-items: center;
+    text-align: center;
+    max-width: 360px;
+    margin-inline: 0 auto;
+  }
+  .cotech-footer-logo-wrap,
+  .cotech-logo-footer {
+    margin-inline: auto;
+  }
+  .cotech-footer-menus {
+    margin-left: auto;
+    max-width: none;
+    flex: 1;
+  }
+}
+.cotech-logo-mark {
+  display: block;
+  height: 28px;
+  width: 28px;
+}
+
+/* Hero service card stack */
+.cotech-hero-stack {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  height: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 640px) {
+  .cotech-hero-stack {
+    height: 560px;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-hero-stack {
+    max-width: none;
+    height: 600px;
+    margin-right: 0;
+  }
+}
+
+.cotech-hero-plate {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 8%;
+  bottom: 0;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #0b2e33;
+  box-shadow: 0 40px 100px rgba(11, 46, 51, 0.35);
+}
+
+.cotech-hero-plate img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.cotech-hero-card {
+  position: absolute;
+  display: block;
+  transition: transform 0.5s ease;
+  text-decoration: none;
+}
+.cotech-hero-card:hover {
+  transform: translateY(-12px);
+}
+.cotech-hero-card article {
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.32);
+}
+.cotech-hero-card .cotech-hero-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.cotech-hero-card .cotech-hero-media-wide {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+.cotech-hero-card img.cotech-hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.cotech-hero-card:hover img.cotech-hero-photo {
+  transform: scale(1.08);
+}
+.cotech-hero-card .cotech-hero-caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 1rem;
+  color: #fff;
+  background: linear-gradient(to top, rgba(11, 46, 51, 0.95), transparent);
+}
+.cotech-hero-card .cotech-hero-caption p {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+.cotech-hero-card .cotech-hero-caption h3 {
+  margin: 0.25rem 0 0;
+  color: #fff;
+}
+
+.cotech-hero-card-1 {
+  left: 0;
+  top: 0;
+  width: 58%;
+  max-width: 300px;
+  z-index: 10;
+  transform: rotate(-8deg);
+}
+.cotech-hero-card-1:hover {
+  transform: translateY(-12px) rotate(-5deg);
+}
+
+.cotech-hero-card-2 {
+  right: 2%;
+  top: 10%;
+  width: 62%;
+  max-width: 320px;
+  z-index: 30;
+  transform: rotate(5deg);
+}
+.cotech-hero-card-2:hover {
+  transform: translateY(-12px) rotate(2deg);
+}
+.cotech-hero-card-2 article {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: #fff;
+  box-shadow: 0 32px 80px rgba(13, 102, 108, 0.35);
+}
+.cotech-hero-card-2 .cotech-hero-caption {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+.cotech-hero-card-2 .cotech-hero-caption p {
+  color: #0d666c;
+}
+
+.cotech-hero-card-3 {
+  left: 14%;
+  bottom: 4%;
+  width: 64%;
+  max-width: 340px;
+  z-index: 20;
+  transform: rotate(-2deg);
+}
+.cotech-hero-card-3:hover {
+  transform: translateY(-12px) rotate(0deg);
+}
+.cotech-hero-card-3 article {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: #fff;
+}
+
+/* Image strip under hero */
+.cotech-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .cotech-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding: 0 1.5rem;
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .cotech-strip {
+    padding: 0 2.5rem;
+  }
+}
+.cotech-strip figure {
+  position: relative;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #0b2e33;
+}
+@media (min-width: 768px) {
+  .cotech-strip figure {
+    border-radius: 1.5rem;
+  }
+}
+.cotech-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cotech-strip figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.cotech-strip-hide-mobile {
+  display: none;
+}
+@media (min-width: 768px) {
+  .cotech-strip-hide-mobile {
+    display: block;
+  }
+}
+
+/* Service grid image tiles */
+.cotech-service-thumb {
+  position: relative;
+  height: 11rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #0b2e33;
+}
+.cotech-service-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+a:hover .cotech-service-thumb img {
+  transform: scale(1.05);
+}
+
+.cotech-hero-ctas {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .cotech-hero-ctas {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-hero-ctas {
+    justify-content: flex-start;
+  }
+}
+
+/* Services / Scoping — full-viewport atmospheric hero */
+.cotech-svc-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* Header clearance only — content is vertically centered in the remaining space */
+  padding: 5.5rem 0 2.5rem;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(13, 102, 108, 0.28), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(13, 102, 108, 0.18), transparent 50%),
+    linear-gradient(165deg, #f4f8f8 0%, #e8f1f1 42%, #0b2e33 160%);
+}
+.cotech-svc-hero > .main-container {
+  width: 100%;
+}
+.cotech-svc-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(11, 46, 51, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 46, 51, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
+}
+.cotech-svc-hero-brand {
+  display: block;
+  height: 32px;
+  width: auto;
+  max-width: 148px;
+  margin: 0 auto 1rem;
+}
+.cotech-svc-hero-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+/* Tighten Tailwind space-y-6 inside the hero stack */
+.cotech-svc-hero-inner.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem;
+}
+.cotech-svc-hero-inner .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.75rem;
+}
+.cotech-svc-hero-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  margin-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .cotech-svc-hero-ctas {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+/* Catalog sits tight under the 100vh hero */
+.cotech-svc-catalog {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .cotech-svc-catalog {
+    padding-top: 4.5rem;
+    padding-bottom: 5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-svc-catalog {
+    padding-top: 5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+/* Services catalog — full-bleed image overlay cards */
+.cotech-svc-catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  .cotech-svc-catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-svc-catalog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+.cotech-svc-card {
+  position: relative;
+  display: block;
+  min-height: 22rem;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  text-decoration: none;
+  color: #fff;
+  background: #0b2e33;
+  isolation: isolate;
+  opacity: 0;
+  transform: translate3d(0, 1.5rem, 0);
+  transition:
+    opacity 0.65s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.65s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.35s ease;
+  will-change: transform, opacity;
+}
+.cotech-svc-card.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.cotech-svc-card:nth-child(2).is-in { transition-delay: 0.06s; }
+.cotech-svc-card:nth-child(3).is-in { transition-delay: 0.1s; }
+.cotech-svc-card:nth-child(4).is-in { transition-delay: 0.04s; }
+.cotech-svc-card:nth-child(5).is-in { transition-delay: 0.08s; }
+.cotech-svc-card:nth-child(6).is-in { transition-delay: 0.12s; }
+.cotech-svc-card:hover {
+  box-shadow: 0 28px 56px rgba(11, 46, 51, 0.22);
+}
+.cotech-svc-card-media {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.cotech-svc-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-svc-card:hover .cotech-svc-card-media img {
+  transform: scale(1.06);
+}
+.cotech-svc-card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  min-height: 22rem;
+  padding: 1.5rem 1.35rem 1.4rem;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 46, 51, 0) 28%,
+    rgba(11, 46, 51, 0.55) 62%,
+    rgba(11, 46, 51, 0.92) 100%
+  );
+}
+.cotech-svc-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.15rem;
+}
+.cotech-svc-card-meta span {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+.cotech-svc-card-body h3 {
+  margin: 0;
+  color: #fff;
+}
+.cotech-svc-card-body p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72) !important;
+  max-width: 28rem;
+}
+.cotech-svc-card-cta {
+  margin-top: 0.35rem;
+  padding-top: 0;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.9;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.cotech-svc-card:hover .cotech-svc-card-cta {
+  opacity: 1;
+  transform: translateX(3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-svc-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Services page — how we work uses shared zigzag */
+.cotech-svc-work {
+  background: #fff;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .cotech-svc-work {
+    padding: 5.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-svc-work {
+    padding: 7rem 0;
+  }
+}
+
+/* Included — numbered editorial rows */
+.cotech-svc-included {
+  background: #f7f8fa;
+  padding: 4rem 0;
+}
+@media (min-width: 768px) {
+  .cotech-svc-included {
+    padding: 5.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-svc-included {
+    padding: 7rem 0;
+  }
+}
+.cotech-svc-included-head {
+  max-width: 40rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+.cotech-svc-included-head h2 {
+  margin: 0;
+}
+.cotech-svc-included-head p {
+  margin: 0;
+  color: rgba(11, 46, 51, 0.62);
+}
+.cotech-svc-included-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 52rem;
+  border-top: 1px solid rgba(11, 46, 51, 0.1);
+}
+.cotech-svc-included-row {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid rgba(11, 46, 51, 0.1);
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition:
+    opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, opacity;
+}
+.cotech-svc-included-row.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.cotech-svc-included-row:nth-child(2).is-in { transition-delay: 0.05s; }
+.cotech-svc-included-row:nth-child(3).is-in { transition-delay: 0.08s; }
+.cotech-svc-included-row:nth-child(4).is-in { transition-delay: 0.11s; }
+.cotech-svc-included-row:nth-child(5).is-in { transition-delay: 0.14s; }
+.cotech-svc-included-num {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #0d666c;
+}
+.cotech-svc-included-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+.cotech-svc-included-copy h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0b2e33;
+}
+.cotech-svc-included-copy p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(11, 46, 51, 0.58);
+}
+@media (min-width: 768px) {
+  .cotech-svc-included-row {
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1.75rem;
+    padding: 1.65rem 0.25rem;
+  }
+  .cotech-svc-included-copy {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cotech-svc-included-copy h3 {
+    font-size: 1.25rem;
+    flex: 0 1 auto;
+  }
+  .cotech-svc-included-copy p {
+    flex: 0 1 18rem;
+    text-align: right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-svc-included-row {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ========== Scoping page ========== */
+.cotech-scoping-blueprint {
+  padding: 4rem 0;
+}
+@media (min-width: 768px) {
+  .cotech-scoping-blueprint {
+    padding: 5.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-scoping-blueprint {
+    padding: 7rem 0;
+  }
+}
+.cotech-scoping-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 52rem;
+  margin: 0 auto;
+  border-top: 1px solid rgba(11, 46, 51, 0.1);
+}
+@media (min-width: 768px) {
+  .cotech-scoping-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.cotech-scoping-item {
+  margin: 0;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(11, 46, 51, 0.1);
+  opacity: 0;
+  transform: translateY(1.1rem);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (min-width: 768px) {
+  .cotech-scoping-item {
+    padding: 1.75rem 1.25rem 1.75rem 0;
+  }
+  .cotech-scoping-item:nth-child(even) {
+    padding-left: 1.25rem;
+    padding-right: 0;
+    border-left: 1px solid rgba(11, 46, 51, 0.1);
+  }
+}
+.cotech-scoping-item.is-in {
+  opacity: 1;
+  transform: none;
+}
+.cotech-scoping-item h3 {
+  margin: 0 0 0.5rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #0b2e33;
+}
+.cotech-scoping-item p {
+  margin: 0;
+  color: rgba(11, 46, 51, 0.62);
+  line-height: 1.55;
+}
+.cotech-scoping-prep {
+  padding: 4rem 0 5rem;
+  background: #f7f8fa;
+}
+@media (min-width: 768px) {
+  .cotech-scoping-prep {
+    padding: 5rem 0 6rem;
+  }
+}
+.cotech-scoping-prep-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 52rem;
+  margin: 0 auto;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .cotech-scoping-prep-inner {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+  }
+}
+.cotech-scoping-prep-copy h2 {
+  margin: 0.75rem 0 0.75rem;
+}
+.cotech-scoping-prep-copy p {
+  margin: 0;
+  color: rgba(11, 46, 51, 0.62);
+}
+.cotech-scoping-prep-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(11, 46, 51, 0.1);
+}
+.cotech-scoping-prep-list li {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(11, 46, 51, 0.1);
+  font-family: "Inter Tight", sans-serif;
+  font-size: 1.05rem;
+  color: #0b2e33;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cotech-scoping-prep-list li.is-in {
+  opacity: 1;
+  transform: none;
+}
+.cotech-scoping-prep-list a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.cotech-scoping-prep-list a:hover {
+  color: #0d666c;
+}
+.cotech-legal .cotech-svc-included-copy a {
+  color: #0d666c;
+  text-underline-offset: 0.15em;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-scoping-item,
+  .cotech-scoping-prep-list li {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ========== Projects / Outcomes page ========== */
+.cotech-projects-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  padding: 7rem 0 3.5rem;
+  overflow: hidden;
+  color: #fff;
+  background: #0b2e33;
+}
+.cotech-projects-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cotech-projects-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.cotech-projects-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 46, 51, 0.4) 0%,
+    rgba(11, 46, 51, 0.7) 50%,
+    rgba(11, 46, 51, 0.94) 100%
+  );
+}
+.cotech-projects-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+.cotech-projects-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.15rem, 5vw, 3.6rem);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+.cotech-projects-hero-lead {
+  margin: 0;
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.cotech-projects-hero-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  margin-top: 0.35rem;
+}
+@media (min-width: 768px) {
+  .cotech-projects-hero {
+    padding: 8rem 0 4.5rem;
+  }
+  .cotech-projects-hero-ctas {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+.cotech-projects-path {
+  background: #fff;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .cotech-projects-path {
+    padding: 5.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-projects-path {
+    padding: 7rem 0;
+  }
+}
+.cotech-projects-outcomes {
+  background: #f7f8fa;
+  padding: 4rem 0;
+}
+@media (min-width: 768px) {
+  .cotech-projects-outcomes {
+    padding: 5.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-projects-outcomes {
+    padding: 7rem 0;
+  }
+}
+.cotech-projects-outcome-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  .cotech-projects-outcome-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+.cotech-projects-receive {
+  background: #fff;
+}
+.cotech-projects-cases {
+  background: #f7f8fa;
+  padding: 4rem 0;
+}
+@media (min-width: 768px) {
+  .cotech-projects-cases {
+    padding: 5.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-projects-cases {
+    padding: 7rem 0;
+  }
+}
+.cotech-projects-cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 58rem;
+  margin: 0 auto;
+}
+.cotech-projects-case {
+  margin: 0;
+  opacity: 0;
+  transform: translate3d(0, 1.1rem, 0);
+  transition:
+    opacity 0.65s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-projects-case.is-in {
+  opacity: 1;
+  transform: none;
+}
+.cotech-projects-case-link {
+  display: grid;
+  gap: 0;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(11, 46, 51, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+.cotech-projects-case-link:hover {
+  box-shadow: 0 24px 48px rgba(11, 46, 51, 0.1);
+}
+@media (min-width: 768px) {
+  .cotech-projects-case-link {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    min-height: 17rem;
+  }
+}
+.cotech-projects-case-media {
+  margin: 0;
+  min-height: 14rem;
+  background: #0b2e33;
+  overflow: hidden;
+}
+.cotech-projects-case-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-projects-case-link:hover .cotech-projects-case-media img {
+  transform: scale(1.05);
+}
+.cotech-projects-case-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1.5rem 1.35rem 1.6rem;
+}
+@media (min-width: 768px) {
+  .cotech-projects-case-body {
+    padding: 1.75rem 1.85rem;
+  }
+}
+.cotech-projects-case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0d666c;
+}
+.cotech-projects-case-body h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #0b2e33;
+}
+.cotech-projects-case-body p {
+  margin: 0;
+  font-size: 0.975rem;
+  line-height: 1.55;
+  color: rgba(11, 46, 51, 0.62);
+}
+.cotech-projects-case-cta {
+  margin-top: 0.35rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0d666c;
+  transition: transform 0.25s ease;
+}
+.cotech-projects-case-link:hover .cotech-projects-case-cta {
+  transform: translateX(3px);
+}
+.cotech-projects-cases-note {
+  margin: 1.5rem auto 0;
+  max-width: 36rem;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(11, 46, 51, 0.5);
+}
+.cotech-projects-cta {
+  background: #f7f8fa;
+  padding: 4rem 0 5rem;
+}
+.cotech-projects-cta-inner {
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.cotech-projects-cta-inner h2 {
+  margin: 0;
+}
+.cotech-projects-cta-inner p {
+  margin: 0;
+  color: rgba(11, 46, 51, 0.62);
+}
+
+/* Contact page form */
+.cotech-contact-form-section {
+  padding: 4rem 0;
+}
+@media (min-width: 768px) {
+  .cotech-contact-form-section {
+    padding: 5.5rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .cotech-contact-form-section {
+    padding: 7rem 0;
+  }
+}
+.cotech-contact-form-head {
+  max-width: 40rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+.cotech-contact-form-head h2 {
+  margin: 0;
+}
+.cotech-contact-form-head p {
+  margin: 0;
+  color: rgba(11, 46, 51, 0.62);
+}
+.cotech-contact-form-panel {
+  max-width: 52rem;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(11, 46, 51, 0.08);
+}
+@media (min-width: 768px) {
+  .cotech-contact-form-panel {
+    padding: 2.25rem 2.5rem;
+  }
+}
+.cotech-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.cotech-contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .cotech-contact-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.cotech-contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.cotech-contact-field label {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0b2e33;
+}
+.cotech-contact-field input,
+.cotech-contact-field textarea {
+  width: 100%;
+  border: 1px solid rgba(11, 46, 51, 0.14);
+  background: #f7f8fa;
+  color: #0b2e33;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cotech-contact-field input {
+  height: 3rem;
+  border-radius: 999px;
+}
+.cotech-contact-field textarea {
+  min-height: 10rem;
+  border-radius: 1rem;
+  resize: vertical;
+}
+.cotech-contact-field input::placeholder,
+.cotech-contact-field textarea::placeholder {
+  color: rgba(11, 46, 51, 0.45);
+}
+.cotech-contact-field input:focus,
+.cotech-contact-field textarea:focus {
+  border-color: #0d666c;
+  box-shadow: 0 0 0 3px rgba(13, 102, 108, 0.12);
+}
+.cotech-contact-form-note {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(11, 46, 51, 0.5);
+}
+.cotech-contact .cotech-svc-included-copy a {
+  color: #0d666c;
+  text-underline-offset: 0.15em;
+}
+
+/* Contact map (Leaflet) */
+.cotech-contact-map-section {
+  padding: 1rem 0 4rem;
+}
+@media (min-width: 768px) {
+  .cotech-contact-map-section {
+    padding: 1rem 0 5.5rem;
+  }
+}
+.cotech-contact-map-wrap {
+  position: relative;
+  max-width: 64rem;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(11, 46, 51, 0.08);
+  background: #e8eef0;
+}
+.cotech-contact-map {
+  height: 420px;
+  width: 100%;
+  z-index: 0;
+}
+.cotech-contact-map-show {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 10;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  background: #0d666c;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(11, 46, 51, 0.18);
+}
+.cotech-contact-map-show:hover {
+  background: #0b2e33;
+}
+.cotech-contact-map-show[hidden] {
+  display: none !important;
+}
+.cotech-leaflet-popup .leaflet-popup-content-wrapper {
+  border-radius: 0.85rem;
+  box-shadow: 0 12px 28px rgba(11, 46, 51, 0.16);
+  padding: 0;
+}
+.cotech-leaflet-popup .leaflet-popup-content {
+  margin: 0.9rem 1rem;
+  min-width: 180px;
+}
+.cotech-leaflet-popup .leaflet-popup-tip {
+  background: #fff;
+}
+.cotech-map-popup h3 {
+  margin: 0 0 0.35rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b2e33;
+}
+.cotech-map-popup p {
+  margin: 0 0 0.55rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(11, 46, 51, 0.62);
+}
+.cotech-map-popup a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #0d666c;
+  text-decoration: none;
+}
+.cotech-map-popup a:hover {
+  text-decoration: underline;
+}
+
+/* Project detail — sample / future dashboard entries */
+.cotech-project-detail-kicker {
+  margin: 0;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.cotech-project-detail-tags {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.cotech-project-detail-tags li {
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+.cotech-project-detail-hero .font-inter-tight.text-secondary {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+/* Project detail — visual showcase (dashboard can append figures later) */
+.cotech-project-showcase {
+  margin: 0;
+  padding: 0;
+}
+.cotech-project-showcase-feature {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #0b2e33;
+}
+.cotech-project-showcase-feature img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cotech-project-showcase-feature.is-in img,
+.cotech-project-showcase-feature:hover img {
+  transform: scale(1);
+}
+.cotech-project-showcase-feature figcaption {
+  margin: 0.75rem 0 0;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: rgba(11, 46, 51, 0.55);
+}
+.cotech-project-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+@media (min-width: 768px) {
+  .cotech-project-showcase-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 0.85rem;
+  }
+}
+.cotech-project-showcase-grid figure {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #0b2e33;
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cotech-project-showcase-grid figure.is-in {
+  opacity: 1;
+  transform: none;
+}
+.cotech-project-showcase-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 14rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cotech-project-showcase-grid figure:hover img {
+  transform: scale(1.03);
+}
+.cotech-project-showcase-grid figcaption {
+  margin: 0.65rem 0 0;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: rgba(11, 46, 51, 0.55);
+}
+.cotech-project-showcase-note {
+  margin: 1.25rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(11, 46, 51, 0.55);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-project-showcase-feature img,
+  .cotech-project-showcase-grid img,
+  .cotech-project-showcase-grid figure {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ========== Single service detail (editorial) ========== */
+.cotech-svc-detail-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  padding: 7rem 0 3.5rem;
+  overflow: hidden;
+  color: #fff;
+  background: #0b2e33;
+}
+.cotech-svc-detail-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cotech-svc-detail-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+.cotech-svc-detail-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 46, 51, 0.45) 0%,
+    rgba(11, 46, 51, 0.72) 48%,
+    rgba(11, 46, 51, 0.94) 100%
+  );
+}
+.cotech-svc-detail-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+.cotech-svc-detail-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+.cotech-svc-detail-hero .cotech-svc-detail-lead {
+  margin: 0;
+  max-width: 38rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.cotech-svc-detail-hero .cotech-svc-detail-lead.muted {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.98rem;
+}
+.cotech-svc-detail-hero .font-inter-tight.text-secondary {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+.cotech-svc-detail-hero-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .cotech-svc-detail-hero {
+    padding: 8rem 0 4.5rem;
+  }
+  .cotech-svc-detail-hero-ctas {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+.cotech-svc-detail-body {
+  padding: 3.5rem 0 4.5rem;
+  background: #f7f8fa;
+}
+@media (min-width: 768px) {
+  .cotech-svc-detail-body {
+    padding: 4.5rem 0 6rem;
+  }
+}
+.cotech-svc-detail-layout {
+  display: grid;
+  gap: 2.5rem;
+}
+@media (min-width: 1100px) {
+  .cotech-svc-detail-layout {
+    grid-template-columns: minmax(0, 1fr) 13.5rem;
+    gap: 3.5rem;
+    align-items: start;
+  }
+}
+.cotech-svc-detail-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+  min-width: 0;
+}
+@media (min-width: 768px) {
+  .cotech-svc-detail-main {
+    gap: 4rem;
+  }
+}
+.cotech-svc-detail-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cotech-svc-detail-block h2 {
+  margin: 0;
+  max-width: 36rem;
+}
+.cotech-svc-detail-block > p {
+  margin: 0;
+  max-width: 42rem;
+  color: rgba(11, 46, 51, 0.68);
+  line-height: 1.6;
+}
+.cotech-svc-detail-intro {
+  margin-bottom: 0.5rem !important;
+}
+.cotech-svc-detail-note {
+  margin-top: 0.75rem !important;
+  font-size: 0.9rem;
+  color: rgba(11, 46, 51, 0.55) !important;
+}
+.cotech-svc-detail-solve-list,
+.cotech-svc-detail-packs,
+.cotech-svc-detail-how-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(11, 46, 51, 0.1);
+}
+.cotech-svc-detail-solve,
+.cotech-svc-detail-pack,
+.cotech-svc-detail-how {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 0.85rem 1rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid rgba(11, 46, 51, 0.1);
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition:
+    opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-svc-detail-solve.is-in,
+.cotech-svc-detail-pack.is-in,
+.cotech-svc-detail-how.is-in {
+  opacity: 1;
+  transform: none;
+}
+.cotech-svc-detail-solve-num,
+.cotech-svc-detail-pack-num,
+.cotech-svc-detail-how > span:first-child {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #0d666c;
+  padding-top: 0.2rem;
+}
+.cotech-svc-detail-solve-body h3,
+.cotech-svc-detail-pack h3,
+.cotech-svc-detail-how h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0b2e33;
+}
+.cotech-svc-detail-solve-cols {
+  display: grid;
+  gap: 0.85rem;
+}
+@media (min-width: 768px) {
+  .cotech-svc-detail-solve-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .cotech-svc-detail-solve,
+  .cotech-svc-detail-pack,
+  .cotech-svc-detail-how {
+    grid-template-columns: 3.5rem 1fr;
+    gap: 1.25rem;
+    padding: 1.55rem 0;
+  }
+}
+.cotech-svc-detail-solve-cols .lbl,
+.cotech-svc-detail-aside .lbl,
+.cotech-svc-detail-how .sub {
+  margin: 0 0 0.2rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0d666c;
+}
+.cotech-svc-detail-solve-cols p:not(.lbl),
+.cotech-svc-detail-pack p,
+.cotech-svc-detail-how p:not(.sub) {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(11, 46, 51, 0.62);
+}
+.cotech-svc-detail-how .sub {
+  margin-bottom: 0.35rem;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-size: 0.9rem;
+  color: #0b2e33;
+}
+.cotech-svc-detail-aside {
+  margin-top: 0.75rem;
+  padding: 1.35rem 1.4rem;
+  border-left: 3px solid #0d666c;
+  background: #fff;
+  opacity: 0;
+  transform: translate3d(0, 0.75rem, 0);
+  transition:
+    opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-svc-detail-aside.is-in {
+  opacity: 1;
+  transform: none;
+}
+.cotech-svc-detail-aside p:not(.lbl) {
+  margin: 0;
+  color: rgba(11, 46, 51, 0.7);
+  line-height: 1.55;
+}
+.cotech-svc-detail-included {
+  max-width: none;
+  margin-top: 0.75rem;
+  background: transparent;
+}
+.cotech-svc-detail-cta {
+  margin-top: 0.5rem;
+  padding: 2rem 0 0;
+  border-top: 1px solid rgba(11, 46, 51, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cotech-svc-detail-cta h2 {
+  margin: 0;
+}
+.cotech-svc-detail-cta > p {
+  margin: 0;
+  max-width: 40rem;
+  color: rgba(11, 46, 51, 0.65);
+}
+.cotech-svc-detail-cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .cotech-svc-detail-cta-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+.cotech-svc-detail-cta-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.cotech-svc-detail-cta-contact a {
+  color: #0b2e33;
+  font-weight: 500;
+  text-decoration: none;
+}
+.cotech-svc-detail-cta-contact a:hover {
+  color: #0d666c;
+}
+.cotech-svc-detail-rail {
+  display: none;
+}
+@media (min-width: 1100px) {
+  .cotech-svc-detail-rail {
+    display: block;
+    position: sticky;
+    top: 6.5rem;
+    padding-top: 0.25rem;
+  }
+}
+.cotech-svc-detail-rail-label {
+  margin: 0 0 0.85rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(11, 46, 51, 0.45);
+}
+.cotech-svc-detail-rail ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  border-left: 1px solid rgba(11, 46, 51, 0.12);
+  padding-left: 0.9rem;
+}
+.cotech-svc-detail-rail a {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: rgba(11, 46, 51, 0.55);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.cotech-svc-detail-rail a:hover {
+  color: #0d666c;
+}
+.cotech-svc-detail-rail-cta {
+  display: inline-block;
+  margin-top: 1.35rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0d666c;
+  text-decoration: none;
+}
+.cotech-svc-detail-rail-cta:hover {
+  text-decoration: underline;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-svc-detail-solve,
+  .cotech-svc-detail-pack,
+  .cotech-svc-detail-how,
+  .cotech-svc-detail-aside {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Footer / sidebar — scoping CTA card (matches approved comp) */
+.cotech-scope-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 0.75rem;
+  padding: 1.75rem 1.5rem 1.75rem;
+  border-radius: 1.5rem;
+  background: #f4f5f8;
+  text-align: left;
+}
+.cotech-scope-cta > p:first-of-type,
+.cotech-scope-cta .cotech-scope-cta-title {
+  margin: 0;
+  max-width: 18ch;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #0b2e33;
+  text-wrap: balance;
+}
+.cotech-scope-cta > p:nth-of-type(2),
+.cotech-scope-cta .cotech-scope-cta-text {
+  margin: 0;
+  max-width: 28ch;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(11, 46, 51, 0.55);
+}
+.cotech-scope-cta > a {
+  display: inline-flex;
+  width: auto;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+.cotech-scope-cta > a button,
+.cotech-scope-cta > a [data-button-wrapper] {
+  width: auto !important;
+  min-width: 0;
+}
+@media (min-width: 640px) {
+  .cotech-scope-cta {
+    padding: 2rem 1.75rem 1.85rem;
+    gap: 0.85rem;
+  }
+  .cotech-scope-cta > p:first-of-type,
+  .cotech-scope-cta .cotech-scope-cta-title {
+    font-size: 1.375rem;
+    max-width: 18ch;
+  }
+}
+
+/* About stats cards — number left, icon right */
+.cotech-stat-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.92) 40%, rgba(232, 243, 244, 0.9) 100%),
+    #fff;
+  border: 1px solid rgba(11, 46, 51, 0.06);
+}
+.cotech-stat-card::before {
+  content: "";
+  position: absolute;
+  right: -18%;
+  bottom: -28%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13, 102, 108, 0.12), transparent 68%);
+  pointer-events: none;
+}
+.cotech-stat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(11, 46, 51, 0.05) 1px, transparent 1px);
+  background-size: 14px 14px;
+  mask-image: linear-gradient(180deg, transparent 20%, #000 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 20%, #000 100%);
+  pointer-events: none;
+  opacity: 0.55;
+}
+.cotech-stat-card > * {
+  position: relative;
+  z-index: 1;
+}
+.cotech-stat-card-top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  width: 100%;
+  gap: 1rem;
+}
+.cotech-stat-card-top h3 {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.cotech-stat-icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 9999px;
+  background: rgba(13, 102, 108, 0.1);
+  color: #0d666c;
+  box-shadow: inset 0 0 0 1px rgba(13, 102, 108, 0.08);
+}
+.cotech-stat-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.cotech-stat-faces {
+  display: flex;
+  margin-top: 0.75rem;
+}
+.cotech-stat-faces img {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  margin-left: -0.45rem;
+}
+.cotech-stat-faces img:first-child {
+  margin-left: 0;
+}
+.cotech-stat-photo img {
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-stat-photo:hover img {
+  transform: scale(1.04);
+}
+
+
+/* Capability bento — Feature-block layout */
+.cotech-bento {
+  background: #f7f8fa;
+  padding: 3rem 0 3.25rem;
+}
+.cotech-bento-intro {
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .cotech-bento { padding: 3.5rem 0 3.75rem; }
+  .cotech-bento-intro { margin-bottom: 2.5rem; }
+}
+@media (min-width: 1280px) {
+  .cotech-bento { padding: 4rem 0 4.25rem; }
+  .cotech-bento-intro { margin-bottom: 3rem; }
+}
+.cotech-bento-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cotech-bento-row {
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .cotech-bento-row-top {
+    grid-template-columns: 1fr 1.25fr 1fr;
+  }
+  .cotech-bento-row-bottom {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.cotech-bento-card {
+  position: relative;
+  display: flex;
+  min-height: 288px;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+.cotech-bento-card.pt-8 { padding-top: 2rem; }
+.cotech-bento-title {
+  margin: 0;
+  padding: 0 1.5rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  color: #0b2e33;
+}
+.cotech-bento-title-bottom {
+  padding: 0 1.5rem 1.75rem;
+}
+.cotech-bento-fill {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+/* --- Grid --- */
+.cotech-bento-grid-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, #000 35%, transparent 88%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, #000 35%, transparent 88%);
+}
+.cotech-bento-grid-cells {
+  display: grid;
+  grid-template-columns: repeat(5, 64px);
+  grid-template-rows: repeat(3, 64px);
+}
+@media (min-width: 1280px) {
+  .cotech-bento-grid-cells {
+    grid-template-columns: repeat(5, 72px);
+    grid-template-rows: repeat(3, 72px);
+  }
+}
+.cotech-bento-grid-cells i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  font-style: normal;
+  color: #0b2e33;
+}
+.cotech-bento-grid-cells i.is-hit {
+  background: rgba(13, 102, 108, 0.1);
+}
+.cotech-bento-grid-cells svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+/* --- Build / FeatureBuild-style middle --- */
+.cotech-bento-build {
+  min-height: 288px;
+  background: linear-gradient(180deg, #f4f8f8 0%, #e8f1f1 100%);
+}
+.cotech-bento-build-scene {
+  position: relative;
+  flex: 1;
+  min-height: 260px;
+  overflow: hidden;
+}
+.cotech-bento-build-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  width: 80%;
+  height: 55%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(13, 102, 108, 0.18);
+  filter: blur(40px);
+}
+.cotech-bento-build-window {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 14%;
+  bottom: 8%;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(16, 24, 40, 0.1);
+  overflow: hidden;
+}
+.cotech-bento-build-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.cotech-bento-build-chrome span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+.cotech-bento-build-chrome span:nth-child(1) { background: #f87171; }
+.cotech-bento-build-chrome span:nth-child(2) { background: #fbbf24; }
+.cotech-bento-build-chrome span:nth-child(3) { background: #4ade80; }
+.cotech-bento-build-chrome em {
+  margin-left: 8px;
+  font-style: normal;
+  font-size: 11px;
+  color: rgba(11, 46, 51, 0.45);
+}
+.cotech-bento-build-body {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 0.9fr;
+  gap: 8px;
+  padding: 12px;
+  height: calc(100% - 37px);
+}
+.cotech-bento-build-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #f7f8fa;
+}
+.cotech-bento-build-col.is-mid {
+  background: rgba(13, 102, 108, 0.08);
+}
+.cotech-bento-build-col b {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(11, 46, 51, 0.55);
+}
+.cotech-bento-build-col .pill,
+.cotech-bento-build-col .chip,
+.cotech-bento-build-col .row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 11px;
+  color: #0b2e33;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+.cotech-bento-build-col .row i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d1d5db;
+}
+.cotech-bento-build-col .row.is-on i { background: #0d666c; }
+.cotech-bento-build-col .chip {
+  justify-content: center;
+  background: #0b2e33;
+  color: #fff;
+}
+.cotech-bento-build-float {
+  position: absolute;
+  z-index: 2;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.12);
+  font-family: "Inter Tight", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0b2e33;
+}
+.cotech-bento-build-float.a {
+  right: 6%;
+  top: 18%;
+}
+.cotech-bento-build-float.b {
+  left: 5%;
+  bottom: 16%;
+}
+
+/* --- Orbit --- */
+.cotech-bento-orbit-card {
+  padding-bottom: 0;
+}
+.cotech-bento-orbit-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cotech-bento-orbit-svg {
+  position: absolute;
+  width: 229px;
+  height: 122px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -42%);
+}
+.cotech-bento-orbit-logo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 96px;
+  margin-top: -12px;
+  border-radius: 18px;
+  background: #0b2e33;
+  box-shadow: 0 18px 36px rgba(11, 46, 51, 0.28);
+}
+.cotech-bento-orbit-logo img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.cotech-bento-spark {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #0b2e33;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.cotech-bento-spark.s1 { top: 42%; right: 16%; }
+.cotech-bento-spark.s2 { bottom: 30%; left: 14%; width: 10px; height: 10px; opacity: 0.7; }
+
+/* --- Code editor --- */
+.cotech-bento-code-card {
+  min-height: 264px;
+  padding-top: 1.5rem;
+}
+.cotech-bento-code-scene {
+  overflow: hidden;
+}
+.cotech-bento-code-blur {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 0.5rem;
+  left: 1.5rem;
+  height: 10rem;
+  border-radius: 1.5rem;
+  background: rgba(13, 102, 108, 0.18);
+  filter: blur(28px);
+}
+.cotech-bento-code-window {
+  position: absolute;
+  right: 1rem;
+  bottom: -1.5rem;
+  left: -0.875rem;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 0;
+  background: #fff;
+  box-shadow: 0 -8px 30px rgba(16, 24, 40, 0.06);
+}
+.cotech-bento-code-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+}
+.cotech-bento-code-dots {
+  display: flex;
+  gap: 6px;
+}
+.cotech-bento-code-dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f87171;
+  font-style: normal;
+}
+.cotech-bento-code-dots i:nth-child(2) { background: #fbbf24; }
+.cotech-bento-code-dots i:nth-child(3) { background: #4ade80; }
+.cotech-bento-code-bar span {
+  font-size: 12px;
+  color: rgba(11, 46, 51, 0.55);
+}
+.cotech-bento-code-bar em {
+  margin-left: auto;
+  font-style: normal;
+  font-size: 12px;
+  color: rgba(11, 46, 51, 0.45);
+}
+.cotech-bento-code-pre {
+  margin: 0;
+  padding: 1rem 1.25rem 2.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #0b2e33;
+  white-space: pre-wrap;
+}
+.cotech-bento-code-pre .k { color: #7c3aed; }
+.cotech-bento-code-pre .fn { color: #2563eb; }
+.cotech-bento-code-pre .tag { color: #e11d48; }
+.cotech-bento-code-pre .attr { color: #d97706; }
+.cotech-bento-code-pre .str { color: #059669; }
+
+/* --- Tech belt (curved SVG path + logos) --- */
+.cotech-bento-belt-card {
+  min-height: 264px;
+}
+.cotech-bento-stacks {
+  position: relative;
+  overflow: hidden;
+}
+.cotech-bento-belt-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.cotech-bento-belt-svg foreignObject {
+  overflow: visible;
+}
+.cotech-bento-rider-chip {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  color: #fff;
+  box-shadow: 0 16px 32px rgba(16, 24, 40, 0.22);
+  box-sizing: border-box;
+}
+.cotech-bento-rider-chip svg,
+.cotech-bento-rider-chip img {
+  width: 1.65rem;
+  height: 1.65rem;
+  display: block;
+}
+.cotech-bento-rider-chip.is-whatsapp { background: #25d366; color: #fff; }
+.cotech-bento-rider-chip.is-hubspot { background: #ff7a59; color: #fff; }
+.cotech-bento-rider-chip.is-openai { background: #10a37f; color: #fff; }
+.cotech-bento-rider-chip.is-zapier {
+  background: #fff;
+  color: #ff4a00;
+  box-shadow: 0 14px 28px rgba(16, 24, 40, 0.14), inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+.cotech-bento-rider-chip.is-google {
+  background: #fff;
+  color: #4285f4;
+  box-shadow: 0 14px 28px rgba(16, 24, 40, 0.14), inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+.cotech-bento-rider-chip.is-slack {
+  background: #fff;
+  color: #4a154b;
+  box-shadow: 0 14px 28px rgba(16, 24, 40, 0.14), inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+.cotech-bento-rider-chip.is-microsoft {
+  background: #fff;
+  color: #00a4ef;
+  box-shadow: 0 14px 28px rgba(16, 24, 40, 0.14), inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+.cotech-bento-rider-chip.is-notion {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 14px 28px rgba(16, 24, 40, 0.14), inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+.cotech-bento-rider-chip.is-stripe { background: #635bff; color: #fff; }
+.cotech-bento-rider-chip.is-meta { background: #0668e1; color: #fff; }
+.cotech-bento-rider-chip.is-salesforce { background: #00a1e0; color: #fff; }
+
+.cotech-bento-rider-chip.is-whatsapp img,
+.cotech-bento-rider-chip.is-hubspot img,
+.cotech-bento-rider-chip.is-openai img,
+.cotech-bento-rider-chip.is-stripe img,
+.cotech-bento-rider-chip.is-meta img,
+.cotech-bento-rider-chip.is-salesforce img {
+  filter: brightness(0) invert(1);
+}
+.cotech-bento-rider-chip.is-zapier img,
+.cotech-bento-rider-chip.is-slack img,
+.cotech-bento-rider-chip.is-microsoft img {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+.cotech-bento-belt-static {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 1rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-bento-belt-svg { display: none; }
+  .cotech-bento-belt-static { display: flex; }
+}
+
+/* --- Motion card stack --- */
+.cotech-bento-motion-card {
+  min-height: 264px;
+}
+.cotech-bento-motion-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 80%, rgba(13, 102, 108, 0.12), transparent 70%);
+}
+.cotech-bento-motion-card-ui {
+  position: absolute;
+  width: min(72%, 210px);
+  height: 150px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(16, 24, 40, 0.1);
+}
+.cotech-bento-motion-card-ui.is-3 {
+  transform: translateY(-22px) scale(0.88);
+  opacity: 0.4;
+  background: rgba(13, 102, 108, 0.08);
+}
+.cotech-bento-motion-card-ui.is-2 {
+  transform: translateY(-10px) scale(0.94);
+  opacity: 0.65;
+  background: rgba(13, 102, 108, 0.12);
+}
+.cotech-bento-motion-card-ui.is-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  animation: cotech-float 4.5s ease-in-out infinite;
+}
+.cotech-bento-motion-card-ui .bar {
+  height: 10px;
+  width: 42%;
+  border-radius: 999px;
+  background: #0d666c;
+}
+.cotech-bento-motion-card-ui .lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cotech-bento-motion-card-ui .lines span {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background: #e8eef0;
+}
+.cotech-bento-motion-card-ui .lines span:nth-child(2) { width: 78%; }
+.cotech-bento-motion-card-ui .lines span:nth-child(3) { width: 56%; }
+.cotech-bento-motion-card-ui .footer-row {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+.cotech-bento-motion-card-ui .footer-row em {
+  flex: 1;
+  padding: 6px 0;
+  border-radius: 8px;
+  background: #f4f5f8;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  color: #0b2e33;
+}
+@keyframes cotech-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-bento-motion-card-ui.is-1 { animation: none; }
+}
+
+
+/* --- Bento ambient life --- */
+.cotech-bento-grid-cells i.has-logo img,
+.cotech-bento-grid-cells i.is-hit img {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
+  object-fit: contain;
+}
+.cotech-bento-grid-cells i.is-hit img.is-brand {
+  filter: none;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.cotech-bento-grid-cells i.has-logo {
+  background: rgba(13, 102, 108, 0.04);
+}
+.cotech-bento-grid-cells i.has-logo img.is-dim {
+  opacity: 0.45;
+}
+.cotech-bento-grid-cells i.has-logo:nth-child(odd) {
+  animation: cotech-cell-breathe 3.6s ease-in-out infinite;
+}
+.cotech-bento-grid-cells i.has-logo:nth-child(even) {
+  animation: cotech-cell-breathe 4.2s ease-in-out 0.4s infinite;
+}
+@keyframes cotech-cell-breathe {
+  0%, 100% { background: rgba(13, 102, 108, 0.03); }
+  50% { background: rgba(13, 102, 108, 0.08); }
+}
+.cotech-bento-grid-cells i.is-hit {
+  animation: cotech-hit-pulse 2.8s ease-in-out infinite;
+}
+.cotech-bento-pulse-ring {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(13, 102, 108, 0.35);
+  pointer-events: none;
+  animation: cotech-ring 2.8s ease-out infinite;
+}
+@keyframes cotech-hit-pulse {
+  0%, 100% { background: rgba(13, 102, 108, 0.1); transform: scale(1); }
+  50% { background: rgba(13, 102, 108, 0.18); transform: scale(1.04); }
+}
+@keyframes cotech-ring {
+  0% { opacity: 0.55; transform: scale(0.85); }
+  100% { opacity: 0; transform: scale(1.55); }
+}
+
+.cotech-bento-build-chrome {
+  justify-content: flex-start;
+}
+.cotech-bento-live-dot {
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 10px;
+  color: #0d666c;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.cotech-bento-live-dot::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+  animation: cotech-live 1.8s ease-out infinite;
+}
+@keyframes cotech-live {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45); }
+  70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+.cotech-bento-build-col .pill img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.cotech-bento-build-col .pill.is-tick {
+  animation: cotech-slide-in 0.55s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.cotech-bento-build-col .pill.is-tick.d2 { animation-delay: 0.12s; }
+.cotech-bento-build-col .pill.is-tick.d3 { animation-delay: 0.24s; }
+@keyframes cotech-slide-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.cotech-bento-build-col .row.is-on i {
+  animation: cotech-live 1.8s ease-out infinite;
+  background: #0d666c;
+}
+.cotech-bento-build-col .chip.is-pulse {
+  animation: cotech-chip-glow 2.4s ease-in-out infinite;
+}
+@keyframes cotech-chip-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(13, 102, 108, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(13, 102, 108, 0.15); }
+}
+.cotech-bento-build-float.a {
+  animation: cotech-float 4.5s ease-in-out infinite;
+}
+.cotech-bento-build-float.b {
+  animation: cotech-float 5.2s ease-in-out 0.4s infinite;
+}
+
+.cotech-bento-orbit-logo {
+  animation: cotech-float 5s ease-in-out infinite;
+}
+.cotech-bento-spark.s1 {
+  animation: cotech-spark 2.2s ease-in-out infinite;
+}
+.cotech-bento-spark.s2 {
+  animation: cotech-spark 2.8s ease-in-out 0.4s infinite;
+}
+@keyframes cotech-spark {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+.cotech-bento-orbit-chip {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.14);
+  animation: cotech-float 4.2s ease-in-out infinite;
+}
+.cotech-bento-orbit-chip img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.cotech-bento-orbit-chip.left {
+  left: 14%;
+  top: 38%;
+  animation-delay: 0.2s;
+}
+.cotech-bento-orbit-chip.right {
+  right: 12%;
+  top: 46%;
+  animation-delay: 0.7s;
+}
+
+.cotech-bento-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: #0d666c;
+  animation: cotech-blink 1s steps(1) infinite;
+}
+@keyframes cotech-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.cotech-bento-motion-thumb {
+  height: 54px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #e8eef0;
+}
+.cotech-bento-motion-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cotech-bento-motion-card-ui .footer-row em.is-step,
+.cotech-bento-motion-card-ui .footer-row em {
+  transition: background 0.35s cubic-bezier(0.23, 1, 0.32, 1), color 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-bento-motion-card-ui.is-1 .footer-row {
+  animation: cotech-steps 4.8s ease-in-out infinite;
+}
+@keyframes cotech-steps {
+  0%, 28% {
+    /* step 1 via child colors handled below */
+  }
+}
+.cotech-bento-motion-card-ui.is-1 .footer-row em:nth-child(1) {
+  animation: cotech-step-on 4.8s ease-in-out infinite;
+}
+.cotech-bento-motion-card-ui.is-1 .footer-row em:nth-child(2) {
+  animation: cotech-step-on 4.8s ease-in-out 1.6s infinite;
+}
+.cotech-bento-motion-card-ui.is-1 .footer-row em:nth-child(3) {
+  animation: cotech-step-on 4.8s ease-in-out 3.2s infinite;
+}
+@keyframes cotech-step-on {
+  0%, 20%, 100% { background: #f4f5f8; color: #0b2e33; }
+  8%, 18% { background: #0d666c; color: #fff; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cotech-bento-grid-cells i.is-hit,
+  .cotech-bento-grid-cells i.has-logo:nth-child(odd),
+  .cotech-bento-grid-cells i.has-logo:nth-child(even),
+  .cotech-bento-pulse-ring,
+  .cotech-bento-live-dot::before,
+  .cotech-bento-build-col .pill.is-tick,
+  .cotech-bento-build-col .row.is-on i,
+  .cotech-bento-build-col .chip.is-pulse,
+  .cotech-bento-build-float.a,
+  .cotech-bento-build-float.b,
+  .cotech-bento-orbit-logo,
+  .cotech-bento-spark.s1,
+  .cotech-bento-spark.s2,
+  .cotech-bento-orbit-chip,
+  .cotech-bento-cursor,
+  .cotech-bento-motion-card-ui.is-1 .footer-row em:nth-child(1),
+  .cotech-bento-motion-card-ui.is-1 .footer-row em:nth-child(2),
+  .cotech-bento-motion-card-ui.is-1 .footer-row em:nth-child(3) {
+    animation: none !important;
+  }
+  .cotech-bento-orbit-svg g {
+    display: none;
+  }
+}
+
+/* Trusted-by client cards */
+.cotech-trust-card {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.96) 38%, rgba(232, 243, 244, 0.92) 100%),
+    #fff;
+  border: 1px solid rgba(11, 46, 51, 0.06);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  transition:
+    transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 0.45s ease;
+}
+.cotech-trust-card::before {
+  content: "";
+  position: absolute;
+  right: -22%;
+  bottom: -34%;
+  width: 78%;
+  height: 78%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13, 102, 108, 0.14), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+.cotech-trust-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(11, 46, 51, 0.055) 1px, transparent 1px);
+  background-size: 13px 13px;
+  mask-image: linear-gradient(180deg, transparent 12%, #000 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 12%, #000 100%);
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+}
+.cotech-trust-card > * {
+  position: relative;
+  z-index: 1;
+}
+.cotech-trust-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 102, 108, 0.18);
+  box-shadow:
+    0 14px 28px rgba(11, 46, 51, 0.08),
+    0 0 0 1px rgba(13, 102, 108, 0.06);
+}
+.cotech-trust-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+}
+.cotech-trust-card-head img {
+  transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-trust-card:hover .cotech-trust-card-head img {
+  transform: scale(1.04);
+}
+.cotech-trust-chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0d666c;
+  background: rgba(13, 102, 108, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(13, 102, 108, 0.1);
+  animation: cotech-trust-chip-breathe 3.6s ease-in-out infinite;
+}
+.cotech-trust-card-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.cotech-trust-bar {
+  width: 100%;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(11, 46, 51, 0.08);
+  overflow: hidden;
+}
+.cotech-trust-bar > span {
+  display: block;
+  height: 100%;
+  width: var(--fill, 70%);
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0d666c, #1a8f97);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.cotech-trust-card.is-lit .cotech-trust-bar > span {
+  animation: cotech-trust-bar-fill 1.15s cubic-bezier(0.23, 1, 0.32, 1) 0.35s forwards;
+}
+.cotech-trust-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  text-align: center;
+}
+.cotech-trust-logo-wrap img {
+  transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-trust-card--logo:hover .cotech-trust-logo-wrap img {
+  transform: scale(1.06);
+}
+.cotech-trust-caption {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(11, 46, 51, 0.55);
+}
+@keyframes cotech-trust-bar-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes cotech-trust-chip-breathe {
+  0%, 100% { box-shadow: inset 0 0 0 1px rgba(13, 102, 108, 0.1); }
+  50% { box-shadow: inset 0 0 0 1px rgba(13, 102, 108, 0.28), 0 0 0 4px rgba(13, 102, 108, 0.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-trust-card,
+  .cotech-trust-card-head img,
+  .cotech-trust-logo-wrap img {
+    transition: none;
+  }
+  .cotech-trust-card:hover {
+    transform: none;
+  }
+  .cotech-trust-chip {
+    animation: none;
+  }
+  .cotech-trust-card.is-lit .cotech-trust-bar > span,
+  .cotech-trust-bar > span {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+
+/* ========== About page (editorial narrative) ========== */
+.cotech-about {
+  background: #f7f8fa;
+  color: #0b2e33;
+}
+.cotech-about-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+.cotech-about-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  padding: 6.5rem 0 3rem;
+  background:
+    radial-gradient(ellipse 80% 60% at 85% 20%, rgba(13, 102, 108, 0.14), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(13, 102, 108, 0.08), transparent 50%),
+    #f7f8fa;
+}
+@media (min-width: 768px) {
+  .cotech-about-hero { padding: 7.5rem 0 3.5rem; }
+}
+@media (min-width: 1280px) {
+  .cotech-about-hero { padding: 8rem 0 4rem; }
+}
+.cotech-about-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+}
+.cotech-about-hero h1 {
+  margin: 0;
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  font-size: clamp(2.25rem, 5vw, 3.85rem);
+  color: #0b2e33;
+  text-wrap: balance;
+}
+.cotech-about-hero-lead {
+  margin: 0;
+  max-width: 38rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: rgba(11, 46, 51, 0.62);
+}
+.cotech-about-hero-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+@media (min-width: 640px) {
+  .cotech-about-hero-ctas {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+  }
+}
+.cotech-about-section {
+  padding: 3rem 0;
+}
+@media (min-width: 768px) {
+  .cotech-about-section { padding: 3.75rem 0; }
+}
+@media (min-width: 1280px) {
+  .cotech-about-section { padding: 4.5rem 0; }
+}
+/* Who we are — centered intro + homepage dense stats */
+.cotech-about-who-intro {
+  margin-bottom: 0.5rem;
+}
+.cotech-about-who-intro h2,
+.cotech-about-who-title {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter Tight", sans-serif;
+  font-size: clamp(1.45rem, 2.6vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  color: #0b2e33;
+  text-align: center;
+}
+.cotech-about-who-line {
+  display: block;
+  white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .cotech-about-who-title {
+    font-size: clamp(1.2rem, 5.2vw, 1.45rem);
+  }
+}
+.cotech-about-who-intro p {
+  color: rgba(11, 46, 51, 0.62);
+  line-height: 1.55;
+}
+.cotech-about-who-section .cotech-stat-photo {
+  min-height: 230px;
+}
+@media (min-width: 768px) {
+  .cotech-about-who-section .cotech-stat-photo {
+    min-height: 100%;
+  }
+}
+.cotech-about-beliefs {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .cotech-about-beliefs {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+.cotech-about-belief {
+  padding: 1.75rem 1.5rem;
+  border-radius: 0.75rem;
+  min-height: 14rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.cotech-about-belief-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background: rgba(13, 102, 108, 0.1);
+  color: #0d666c;
+  margin-bottom: 0.25rem;
+}
+.cotech-about-belief-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.cotech-about-belief h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.cotech-about-belief p {
+  margin: 0;
+  margin-top: auto;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(11, 46, 51, 0.6);
+}
+.cotech-about-steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 64rem;
+  margin: 2rem auto 0;
+}
+.cotech-about-work {
+  background: #fff;
+  overflow: hidden;
+}
+.cotech-about-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+  opacity: 0;
+  transform: translate3d(-1.75rem, 1.1rem, 0);
+  transition:
+    opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, opacity;
+}
+.cotech-about-step:nth-child(even) {
+  transform: translate3d(1.75rem, 1.1rem, 0);
+}
+.cotech-about-step.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.cotech-about-step:nth-child(2).is-in { transition-delay: 0.05s; }
+.cotech-about-step:nth-child(3).is-in { transition-delay: 0.08s; }
+.cotech-about-step:nth-child(4).is-in { transition-delay: 0.11s; }
+.cotech-zigzag-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1.5rem 1.25rem 1.4rem;
+  background: #f4f7f7;
+  border: 1px solid rgba(11, 46, 51, 0.06);
+  border-radius: 1.15rem;
+  min-height: 10rem;
+}
+.cotech-about-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  margin: 0 0 0.35rem;
+  border-radius: 9999px;
+  background: rgba(13, 102, 108, 0.12);
+  color: #0d666c;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  animation: cotech-about-step-pulse 3.8s ease-in-out infinite;
+}
+.cotech-about-step:nth-child(2) .cotech-about-step-num { animation-delay: 0.4s; }
+.cotech-about-step:nth-child(3) .cotech-about-step-num { animation-delay: 0.8s; }
+.cotech-about-step:nth-child(4) .cotech-about-step-num { animation-delay: 1.2s; }
+.cotech-about-step h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0b2e33;
+}
+.cotech-about-step p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(11, 46, 51, 0.6);
+}
+.cotech-zigzag-media {
+  margin: 0;
+  position: relative;
+  border-radius: 1.15rem;
+  overflow: hidden;
+  min-height: 11rem;
+  background: #0b2e33;
+  aspect-ratio: 16 / 10;
+}
+.cotech-zigzag-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  .cotech-about-steps {
+    gap: 2.5rem;
+    padding: 0.75rem 0 0.5rem;
+  }
+  .cotech-about-steps::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 1.25rem;
+    bottom: 1.25rem;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(13, 102, 108, 0),
+      rgba(13, 102, 108, 0.28) 10%,
+      rgba(13, 102, 108, 0.28) 90%,
+      rgba(13, 102, 108, 0)
+    );
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .cotech-about-step {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 3.5rem;
+    align-items: stretch;
+  }
+  /* Even rows: media left, copy right */
+  .cotech-about-step:nth-child(even) .cotech-zigzag-copy {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .cotech-about-step:nth-child(even) .cotech-zigzag-media {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .cotech-about-step::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 9999px;
+    background: #0d666c;
+    box-shadow: 0 0 0 5px rgba(13, 102, 108, 0.12);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .cotech-zigzag-copy {
+    min-height: 0;
+    padding: 1.75rem 1.75rem;
+  }
+  .cotech-zigzag-media {
+    aspect-ratio: 5 / 4;
+    min-height: 0;
+    height: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-about-step,
+  .cotech-about-step:nth-child(even) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+@keyframes cotech-about-step-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(13, 102, 108, 0); }
+  50% { box-shadow: 0 0 0 6px rgba(13, 102, 108, 0.08); }
+}
+
+/* Full-viewport page heroes */
+.cotech-svc-hero,
+.cotech-page-hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+}
+.cotech-page-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Beat utility pt/pb so short heroes center in the first viewport */
+  padding-top: 6.5rem !important;
+  padding-bottom: 3rem !important;
+}
+@media (min-width: 768px) {
+  .cotech-page-hero {
+    padding-top: 7.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+/* Homepage first viewport */
+main.bg-background-13 > section.pt-30 {
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cotech-about-build-section {
+  overflow: visible;
+  padding-bottom: 0;
+}
+.cotech-zoom-stack {
+  --zs-w: min(880px, calc(100vw - 2.5rem));
+  --zs-h: min(calc(100dvh * 0.68), 560px);
+  --zs-radius: 22px;
+  --zs-perspective: 1400px;
+  --zs-peek: 26px;
+  position: relative;
+  margin-top: 1.5rem;
+  height: 100vh;
+  height: 100dvh;
+}
+.cotech-zoom-stack-pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 5.5rem 0 2rem;
+  box-sizing: border-box;
+}
+.cotech-zoom-stack-chrome {
+  width: var(--zs-w);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 5;
+}
+.cotech-zoom-stack-counter {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #0b2e33;
+  font-variant-numeric: tabular-nums;
+}
+.cotech-zoom-stack-counter-sep {
+  margin: 0 0.35rem;
+  color: rgba(11, 46, 51, 0.35);
+  font-weight: 500;
+}
+.cotech-zoom-stack-progress {
+  flex: 1;
+  max-width: 11rem;
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(11, 46, 51, 0.1);
+  overflow: hidden;
+}
+.cotech-zoom-stack-progress > span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: #0d666c;
+  transform-origin: left center;
+  transition: width 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cotech-zoom-stack-stage {
+  position: relative;
+  width: var(--zs-w);
+  height: var(--zs-h);
+  perspective: var(--zs-perspective);
+  transform-style: preserve-3d;
+}
+.cotech-zoom-stack-card {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--zs-radius);
+  background: #0b2e33;
+  border: 1px solid rgba(11, 46, 51, 0.08);
+  box-shadow: 0 22px 56px rgba(11, 46, 51, 0.18);
+  text-decoration: none;
+  color: inherit;
+  transform-origin: center center;
+  will-change: transform, filter, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.cotech-zoom-stack-media {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #0b2e33;
+}
+.cotech-zoom-stack-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+.cotech-zoom-stack-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 4.5rem 1.6rem 1.55rem;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 46, 51, 0) 0%,
+    rgba(11, 46, 51, 0.55) 42%,
+    rgba(11, 46, 51, 0.88) 100%
+  );
+  color: #fff;
+}
+.cotech-zoom-stack-index {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.72);
+}
+.cotech-zoom-stack-body h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.cotech-zoom-stack-body p {
+  margin: 0;
+  max-width: 40ch;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+}
+@media (max-width: 640px) {
+  .cotech-zoom-stack {
+    --zs-h: min(calc(100dvh * 0.58), 420px);
+  }
+  .cotech-zoom-stack-pin {
+    padding-top: 5rem;
+  }
+  .cotech-zoom-stack-body {
+    padding: 3.5rem 1.15rem 1.25rem;
+  }
+  .cotech-zoom-stack-body p {
+    font-size: 0.8125rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-zoom-stack {
+    height: auto !important;
+  }
+  .cotech-zoom-stack-pin {
+    position: relative;
+    height: auto;
+    padding: 1rem 0 2rem;
+  }
+  .cotech-zoom-stack-stage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    perspective: none;
+  }
+  .cotech-zoom-stack-card {
+    position: relative;
+    inset: auto;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    min-height: 18rem;
+  }
+  .cotech-zoom-stack-chrome {
+    display: none;
+  }
+}
+.cotech-about-promises-section {
+  background: #fff;
+}
+.cotech-about-promises {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .cotech-about-promises { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px) {
+  .cotech-about-promises { grid-template-columns: repeat(5, 1fr); gap: 0.85rem; }
+}
+.cotech-about-promise {
+  padding: 1.35rem 1.2rem;
+  border-radius: 0.75rem;
+  min-height: 9.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cotech-about-promise h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.cotech-about-promise p {
+  margin: 0;
+  margin-top: auto;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: rgba(11, 46, 51, 0.58);
+}
+.cotech-about-cta {
+  text-align: center;
+  padding-bottom: 4.5rem;
+}
+.cotech-about-cta-panel {
+  position: relative;
+  overflow: hidden;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2.75rem 1.75rem;
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(ellipse 70% 80% at 90% 10%, rgba(13, 102, 108, 0.16), transparent 55%),
+    linear-gradient(165deg, #fff 30%, #e8f3f4 100%);
+  border: 1px solid rgba(11, 46, 51, 0.06);
+}
+@media (min-width: 768px) {
+  .cotech-about-cta-panel { padding: 3.5rem 3rem; }
+}
+.cotech-about-cta h2 {
+  margin: 0 auto 0.85rem;
+  max-width: 28ch;
+  font-family: "Inter Tight", sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.cotech-about-cta p {
+  margin: 0 auto 1.5rem;
+  max-width: 40ch;
+  color: rgba(11, 46, 51, 0.6);
+  line-height: 1.55;
+}
+.cotech-about-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.cotech-about-head h2 {
+  margin: 0.65rem auto 0.6rem;
+  max-width: 28ch;
+  font-family: "Inter Tight", sans-serif;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.cotech-about-head p {
+  margin: 0 auto;
+  max-width: 42ch;
+  color: rgba(11, 46, 51, 0.6);
+  line-height: 1.55;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-about-step-num {
+    animation: none !important;
+  }
+}
+
+/* ========== Sitewide responsive hardening ========== */
+img,
+video,
+svg,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-container {
+  width: 100%;
+  max-width: min(1290px, 100%);
+  box-sizing: border-box;
+}
+@media (max-width: 639px) {
+  .main-container {
+    padding-inline: 1rem !important;
+  }
+}
+
+/* Keep fixed header inside narrow phones */
+header .header-scroll {
+  width: calc(100% - 1rem) !important;
+  max-width: min(1290px, calc(100vw - 1rem)) !important;
+  box-sizing: border-box;
+}
+
+/* Editorial heroes — readable type + safe stacking on small screens */
+.cotech-svc-hero {
+  padding: 5.25rem 1rem 2rem;
+}
+.cotech-svc-hero-inner {
+  max-width: min(820px, 100%);
+  padding-inline: 0.25rem;
+}
+.cotech-svc-hero h1,
+.cotech-svc-hero [data-text-reveal].text-heading-1,
+.cotech-page-hero h1,
+.cotech-projects-hero h1,
+.cotech-about-hero h1 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  font-size: clamp(1.75rem, 7.5vw, 3.75rem) !important;
+  line-height: 1.12 !important;
+}
+.cotech-svc-hero p,
+.cotech-page-hero p,
+.cotech-projects-hero p,
+.cotech-about-hero p {
+  overflow-wrap: anywhere;
+  font-size: clamp(0.94rem, 3.6vw, 1.125rem);
+  line-height: 1.55;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+/* CTA buttons: no horizontal overflow from text-nowrap */
+.cotech-svc-hero-ctas a,
+.cotech-projects-cta-inner a,
+.cotech-contact-form button,
+.cotech-contact-form a {
+  max-width: 100%;
+}
+@media (max-width: 639px) {
+  [data-button-wrapper] [data-button-upper-text],
+  [data-button-wrapper] [data-button-lower-text],
+  .text-nowrap {
+    white-space: normal !important;
+    text-wrap: balance;
+  }
+  [data-button-wrapper] {
+    height: auto !important;
+    min-height: 3.5rem;
+  }
+  [data-button-wrapper] > div {
+    min-height: 2.75rem;
+    height: auto !important;
+    padding-block: 0.5rem;
+  }
+  .cotech-svc-hero-ctas a.inline-flex,
+  .cotech-projects-cta-inner a.inline-flex {
+    width: 100% !important;
+    max-width: 22rem;
+  }
+}
+
+/* Numbered rows: stack copy fully on phones */
+@media (max-width: 767px) {
+  .cotech-svc-included-row {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+  .cotech-svc-included-copy {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .cotech-svc-included-copy p {
+    text-align: left !important;
+    flex: none !important;
+    max-width: none !important;
+  }
+  .cotech-scoping-prep-list li {
+    font-size: 0.98rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Contact map */
+@media (max-width: 639px) {
+  .cotech-contact-map {
+    height: 280px;
+  }
+  .cotech-contact-form-panel {
+    padding: 1.15rem;
+    border-radius: 1.15rem;
+  }
+  .cotech-contact-map-wrap {
+    border-radius: 1.15rem;
+  }
+  .cotech-contact-map-section,
+  .cotech-contact-form-section {
+    padding-inline: 0;
+  }
+}
+
+/* Features / team heavy sections — reduce huge top padding on mobile */
+@media (max-width: 767px) {
+  section.pt-\[200px\],
+  section[class*="pt-[200px]"] {
+    padding-top: 4.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  /* Measurable-results floaters: keep inside the image frame */
+  .cotech-features-results,
+  section.pt-\[200px\] .relative,
+  section[class*="pt-[200px]"] .relative {
+    overflow: hidden;
+  }
+  section[class*="pt-[200px]"] .absolute.right-\[15%\],
+  section[class*="pt-[200px]"] .absolute.right-\[17%\] {
+    right: 4% !important;
+    max-width: min(42%, 9.5rem) !important;
+  }
+  section[class*="pt-[200px]"] .absolute.top-\[49%\] {
+    top: 42% !important;
+    font-size: 1.15rem !important;
+    padding: 0.55rem 0.7rem !important;
+  }
+}
+
+/* Integration / icon grids */
+@media (max-width: 639px) {
+  .grid.grid-cols-12 > [class*="col-span"] {
+    min-width: 0;
+  }
+}
+
+/* Footer legal wrap */
+@media (max-width: 479px) {
+  .cotech-footer-legal-links {
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem !important;
+  }
+  .cotech-footer-legal-bar p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 374px) {
+  .cotech-svc-hero {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+  }
+  .cotech-svc-hero-brand {
+    height: 28px;
+  }
+}
+
+/* Prefer no horizontal scroll even if a child misbehaves */
+main,
+footer,
+.cotech-svc-hero,
+.cotech-page-hero,
+.cotech-projects-hero,
+.cotech-about-hero,
+.cotech-contact,
+.cotech-legal,
+.cotech-security,
+.cotech-process,
+.cotech-scoping {
+  overflow-x: clip;
+  max-width: 100%;
+}
+

@@ -1,0 +1,11 @@
+.vercel
+.superpowers
+node_modules
+*.rewritten-backup.html
+_*.py
+__pycache__
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
