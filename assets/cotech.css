@@ -4015,3 +4015,243 @@ footer,
   max-width: 100%;
 }
 
+/* ========== Floating help + scroll-to-top ========== */
+.cotech-float-help {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 90;
+  font-family: "Inter Tight", sans-serif;
+}
+.cotech-float-help-panel {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.65rem);
+  width: min(17.5rem, calc(100vw - 2rem));
+  padding: 0.95rem;
+  border-radius: 1rem;
+  background: #0b2e33;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px rgba(11, 46, 51, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem) scale(0.98);
+  transform-origin: bottom left;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.22s;
+  pointer-events: none;
+}
+.cotech-float-help.is-open .cotech-float-help-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+}
+.cotech-float-help-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.65rem;
+  align-items: start;
+  margin-bottom: 0.85rem;
+}
+.cotech-float-help-status {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: #25d366;
+  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.22);
+}
+.cotech-float-help-copy strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.cotech-float-help-copy span {
+  display: block;
+  margin-top: 0.15rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.cotech-float-help-close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cotech-float-help-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.cotech-float-help-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.cotech-float-help-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.cotech-float-help-actions a:hover {
+  transform: translateY(-1px);
+}
+.cotech-float-help-actions a svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+.cotech-float-help-wa {
+  background: #25d366;
+  color: #fff;
+}
+.cotech-float-help-wa:hover {
+  filter: brightness(1.05);
+}
+.cotech-float-help-call {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+.cotech-float-help-call:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+.cotech-float-help-trigger {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0b2e33;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 3.15rem;
+  padding: 0.4rem 1rem 0.4rem 0.4rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(11, 46, 51, 0.28);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.cotech-float-help-trigger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(11, 46, 51, 0.34);
+}
+.cotech-float-help-trigger-icon {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px;
+  background: #25d366;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cotech-float-help-trigger-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #fff;
+}
+.cotech-float-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 90;
+  width: 3.15rem;
+  height: 3.15rem;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 46, 51, 0.12);
+  background: #fff;
+  color: #0b2e33;
+  box-shadow: 0 10px 28px rgba(11, 46, 51, 0.16);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s,
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.cotech-float-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.cotech-float-top:hover {
+  background: #0d666c;
+  color: #fff;
+  border-color: #0d666c;
+}
+.cotech-float-top svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+@media (max-width: 479px) {
+  .cotech-float-help {
+    left: 0.75rem;
+    bottom: 0.75rem;
+  }
+  .cotech-float-top {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+  .cotech-float-help-trigger-label {
+    /* keep label; shorten only on very narrow */
+  }
+}
+@media (max-width: 359px) {
+  .cotech-float-help-trigger-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .cotech-float-help-trigger {
+    padding: 0.4rem;
+    width: 3.15rem;
+    height: 3.15rem;
+    justify-content: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cotech-float-help-panel,
+  .cotech-float-top,
+  .cotech-float-help-trigger {
+    transition: none;
+  }
+}
+
+
